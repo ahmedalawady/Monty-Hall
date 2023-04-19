@@ -1,21 +1,16 @@
-import express from "express";
-import { IRoute } from "./IRoute";
+import express from 'express';
+import { IRoute } from './IRoute';
 
 export default class Routes {
-    constructor(private app: express.Application, private apis: IRoute[]) {
-        this.app = app;
-        this.apis = apis;
-        this.routes();
-    }
+  constructor(private app: express.Application, private apis: IRoute[]) {
+    this.app = app;
+    this.apis = apis;
+    this.routes();
+  }
 
-    private routes() {
-        for(let api of this.apis) {
-            api.routes();
-        }
+  private routes() {
+    for (const api of this.apis) {
+      api.routes();
     }
+  }
 }
-  
-
-
-
-
